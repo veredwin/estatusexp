@@ -1,0 +1,185 @@
+
+.footer{
+	padding: 15px;
+background-color: blue;
+text-align: center;
+color: yellow;
+position: fixed;
+right: 0;
+bottom: 0;
+left: 0;
+
+}
+
+#fondoinicio{
+font-family: Arial;
+background-color: #A9F5F2;
+width: 100%;
+text-align: center;
+margin: 20px,0px,20px,0px;
+}
+
+.caja{
+background: #F7BE81;
+width: 300px;
+border-radius: 15px;
+margin: 0 auto 0 auto;
+padding: 0px 0px 70px 0px;
+border: black 3px solid;
+
+}
+
+.inp{
+] background: #ecf0f1;
+    border: #ccc 1px solid;
+    border-bottom: #ccc 2px solid;
+    padding: 8px;
+    width: 250px;
+    color: black;
+    margin-top: 15px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.texto{
+height:900px;
+width: 500px;
+background-color: black;
+
+}
+
+
+#container {
+position:static;
+top:0;
+left:0;
+width:100%;
+height:header-<length>;
+
+}
+
+p {
+	text-align: center;
+}
+
+nav {
+
+	background-color: #E64A19;
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #E64A19;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color: #000000; 
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px; /* the height of the main nav */
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+
+	
+/* Change this in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+.responstable tr {
+  border: 1px solid #D9E4E6;
+}
+.responstable tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+.responstable th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #004d4b;
+  color: #d8b328;
+  padding: 1em;
+}
+.responstable th:first-child {
+  display: table-cell;
+  text-align: center;
+}
+.responstable th:nth-child(2) {
+  display: table-cell;
+}
+.responstable th:nth-child(2) span {
+  display: none;
+}
+.responstable th:nth-child(2):after {
+  content: attr(data-th);
+}
+@media (min-width: 480px) {
+  .responstable th:nth-child(2) span {
+    display: block;
+  }
+  .responstable th:nth-child(2):after {
+    display: none;
+  }
+}
+.responstable td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 7em;
+}
+.responstable td:first-child {
+  display: table-cell;
+  text-align: center;
+  border-right: 1px solid black;
+}
+@media (min-width: 480px) {
+  .responstable td {
+    border: 1px solid black;
+  }
+}
+.responstable th, .responstable td {
+  text-align: left;
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .responstable th, .responstable td {
+    display: table-cell;
+    padding: 1em;
+  }
+}
