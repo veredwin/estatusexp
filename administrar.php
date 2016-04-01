@@ -26,7 +26,7 @@ if ($i%2==0){
 echo "<tr class=".$stile.">";
 echo "<td>".$fila[0]."</td><td>".$fila[4]."</td><td>".$fila[1]."</td><td>".$fila[6]."</td>
 <td><center>
-<a href=usuario.php?id_us=".$fila[0]."><p>Editar</p></a><a href=actualiza.php?borrar=".$fila[0]."><p>Borrar</p></a>
+<a href=editar.php?id_us=".$fila[0]."><p>Editar</p></a><a href=actualiza.php?borrar=".$fila[0]."><p>Borrar</p></a>
 </center></td>";
 echo "</tr>";
        
@@ -36,6 +36,6 @@ echo "</table>";
 			?>
 
 
-			<a href="usuario.php"><button type="submit" class="button" style="margin-bottom: 30%;"><span>Agregar</span></button></a>
+			<a href="editar.php"><button type="submit" class="inp" style=" margin-bottom: 50%;"><span>Agregar</span></button></a>
 				
 		</div>

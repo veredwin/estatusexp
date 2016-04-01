@@ -1,0 +1,14 @@
+<?php
+session_start();
+if($_SESSION["tipo"]=="administrador")
+{
+include("estilos.php");
+include("encabezado.php");
+include("edicion.php");
+include("pie.php");
+}
+else
+{
+header("admin.php");	
+}
+?>

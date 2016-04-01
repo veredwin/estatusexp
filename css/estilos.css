@@ -183,3 +183,13 @@ li > a:only-child:after { content: ''; }
     padding: 1em;
   }
 }
+
+table {
+    width: 60%;
+}
+
+th {
+    height: 50px;
+    text-align: center;
+}
+

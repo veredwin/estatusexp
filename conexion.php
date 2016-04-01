@@ -14,18 +14,18 @@ $row = $result->fetch_row();
 $rowcount=mysqli_num_rows($result);
 
 
- $tipo=$row[6];
-
-session_start();
-$_SESSION[]=$tipo;
+ 
 
 if($rowcount==0){
 
 header("Location: login.php");
 
 }elseif ($rowcount>=1) {
-	
-	header("Location: ejem.php");
+
+
+session_start();
+$_SESSION["tipo"]=$row[6];	
+	header("Location: principal.php");
 }
 
 ?>

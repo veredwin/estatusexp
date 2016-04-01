@@ -1,8 +1,8 @@
 <?PHP
-
+require("comprobarsesion.php");
 include("estilos.php");
 include("encabezado.php");
-include("fondoejem.php");
+include("administrar.php");
 include("pie.php");
 
 ?>
