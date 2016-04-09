@@ -30,7 +30,7 @@ border: black 3px solid;
 }
 
 .inp{
-] background: #ecf0f1;
+background: #ecf0f1;
     border: #ccc 1px solid;
     border-bottom: #ccc 2px solid;
     padding: 8px;
@@ -193,3 +193,14 @@ th {
     text-align: center;
 }
 
+.ad{
+
+background: #ecf0f1;
+    border: #ccc 1px solid;
+    border-bottom: #ccc 2px solid;
+  margin: auto;
+    width: 400px;
+    color: black;
+    font-size: 18px;
+    border-radius: 4px;
+}

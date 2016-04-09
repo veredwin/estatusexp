@@ -12,13 +12,13 @@
                     if($tipo=="administrador"){ ?>
 
                     <li>
-                        <a href="">Expedientes</a>
+                        <a href="expediente.php">Expedientes</a>
                     </li>
                      <li>
-                        <a href="">Abogados</a>
+                        <a href="abogados.php">Abogados</a>
                     </li>
                      <li>
-                        <a href="">Clientes</a>
+                        <a href="cliente.php">Clientes</a>
                     </li>
                     <li>
                         <a href="admin.php">Administrar</a>
@@ -34,10 +34,10 @@
                     </li>
                     <?php } elseif ($tipo=="licenciado") { ?>
                     <li>
-                        <a href="">Expedientes</a>
+                        <a href="expediente.php">Expedientes</a>
                     </li>
                     <li>
-                        <a href="">Clientes</a>
+                        <a href="cliente.php">Clientes</a>
                     </li>
                     <?php }?>
                     <li><a href="cerrarsesion.php">Salir</a></li>
