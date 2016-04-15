@@ -21,8 +21,11 @@
 
 			<?php
 include('config.php');
+$conexionSacadatos = new Conexion();
+ $linkSacadatos = $conexionSacadatos->con();
+
 $consulta = "SELECT cliente.id_cliente, usuario.nombre, usuario.apellidopaterno, usuario.apellidomaterno, cliente.rfc, cliente.telefono, cliente.email, direccion.estado, direccion.ciudad, direccion.colonia, direccion.codpostal, direccion.calle, direccion.numero FROM usuario, cliente, direccion, usuariocliente where usuariocliente.id_usuario=usuario.id_usuario and usuariocliente.id_cliente=cliente.id_cliente and cliente.id_cliente=direccion.id_cliente";
-$resultado = $mysqli->query($consulta);
+$resultado = $linkSacadatos->query($consulta);
 $i=0;
     while ($fila = $resultado->fetch_row()) {
 if ($i%2==0){

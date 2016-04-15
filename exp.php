@@ -13,8 +13,11 @@
 
 			<?php
 include('config.php');
+$conexionSacadatos = new Conexion();
+ $linkSacadatos = $conexionSacadatos->con();
+
 $consulta = "SELECT expediente.id_expediente, expediente.expediente, juicio.juicio, juzgado.juzgado, etapa.etapa FROM expediente, juicio, juzgado, etapa WHERE expediente.id_juicio=juicio.id_juicio and expediente.id_juzgado=juzgado.id_juzgado and expediente.id_etapa=etapa.id_etapa";
-$resultado = $mysqli->query($consulta);
+$resultado = $linkSacadatos->query($consulta);
 $i=0;
     while ($fila = $resultado->fetch_row()) {
 if ($i%2==0){

@@ -12,8 +12,12 @@
 
 			<?php
 include('config.php');
+$conexionSacadatos = new Conexion();
+ $linkSacadatos = $conexionSacadatos->con();
+ 
 $consulta = "SELECT * FROM usuario";
-$resultado = $mysqli->query($consulta);
+$resultado = $linkSacadatos->query($consulta);
+
 $i=0;
     while ($fila = $resultado->fetch_row()) {
 if ($i%2==0){
@@ -26,7 +30,7 @@ if ($i%2==0){
 echo "<tr class=".$stile.">";
 echo "<td>".$fila[0]."</td><td>".$fila[4]."</td><td>".$fila[1]."</td><td>".$fila[6]."</td>
 <td><center>
-<a href=editar.php?id_us=".$fila[0]."><p>Editar</p></a><a href=actualiza.php?borrar=".$fila[0]."><p>Borrar</p></a>
+<a href=editar.php?id_us=".$fila[0]."><p>Editar</p></a><a href=editar.php?borrar=".$fila[0]."><p>Borrar</p></a>
 </center></td>";
 echo "</tr>";
        

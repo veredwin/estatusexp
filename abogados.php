@@ -14,7 +14,7 @@ include("abo.php");
 include("pie.php");
 } else {
 	
-require("comprobarsesion.php");
+	//require("comprobarsesion.php");
 }
 
 ?>

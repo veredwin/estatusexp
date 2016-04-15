@@ -13,8 +13,11 @@
 
 			<?php
 include('config.php');
+$conexionSacadatos = new Conexion();
+ $linkSacadatos = $conexionSacadatos->con();
+
 $consulta = "SELECT * FROM usuario WHERE tipo='licenciado'";
-$resultado = $mysqli->query($consulta);
+$resultado = $linkSacadatos->query($consulta);
 $i=0;
     while ($fila = $resultado->fetch_row()) {
 if ($i%2==0){
