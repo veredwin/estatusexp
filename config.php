@@ -1,4 +1,12 @@
 <?php
+
+class Conexion
+{
+
+public function con()
+	{
+
+global $mysqli;	
 $servidor="localhost";
 $us="root";
 $contra="";
@@ -9,5 +17,8 @@ $mysqli = new mysqli($servidor,$us,$contra, $bd);
 if (mysqli_connect_errno()) {
     printf("Falló la conexión: %s\n", mysqli_connect_error());
     exit();
+}
+	return $mysqli;
+}
 }
 ?>

@@ -6,7 +6,11 @@ include('config.php');
 $usuario=$_POST['usuario'];
 $contrasena=$_POST['contrasena'];
 
-$query =  "SELECT * FROM usuario WHERE usuario='$usuario' and contrasena='$contrasena'";
+include('acceslogin.php');
+$conexion=new Validacion($usuario,$contrasena);
+$conexion->valida();
+
+/*$query =  "SELECT * FROM usuario WHERE usuario='$usuario' and contrasena='$contrasena'";
 $result = $mysqli->query($query);
 
 $row = $result->fetch_row();
@@ -26,6 +30,6 @@ header("Location: login.php");
 session_start();
 $_SESSION["tipo"]=$row[6];	
 	header("Location: principal.php");
-}
+}*/
 
 ?>
