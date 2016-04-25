@@ -2,7 +2,7 @@
 // CREANDO MI CONEXION
 
 include_once('config.php');
-class NuevoRegistro extends Conexion
+class NuevoRegistro 
 {
 	
 	

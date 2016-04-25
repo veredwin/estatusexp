@@ -5,12 +5,13 @@
         <div id="container" class="header">
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                   
                     <?php
                    
                     $tipo=$_SESSION["tipo"];
                     if($tipo=="administrador"){ ?>
 
+                    <li><a href="principal.php">Inicio</a></li>
                     <li>
                         <a href="expediente.php">Expedientes</a>
                     </li>
@@ -26,6 +27,7 @@
                     <?php } elseif ($tipo=="cliente") {
                         # code...
                      ?>
+                     <li><a href="#">Inicio</a></li>
                     <li>
                         <a href="">Perfil</a>
                     </li>
@@ -33,6 +35,8 @@
                         <a href="">Historial</a>
                     </li>
                     <?php } elseif ($tipo=="licenciado") { ?>
+
+                     <li><a href="principal.php">Inicio</a></li>
                     <li>
                         <a href="expediente.php">Expedientes</a>
                     </li>

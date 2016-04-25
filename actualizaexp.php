@@ -1,6 +1,69 @@
 <?php
 // CREANDO MI CONEXION
-include('config.php');
+include_once('config.php');
+
+class NuevoRegistro 
+{
+	
+	
+	public $id;
+	public $expediente;
+	public $juzgado;
+	public $juicio;
+	public $etapa;
+	public $cliente;
+	public $licenciado;
+	
+	
+	function __construct($id, $expediente, $juzgado, $juicio, $etapa, $cliente, $licenciado)
+	{
+
+	$this->id=$id;
+	$this->expediente=$expediente;
+	$this->juzgado=$juzgado;
+	$this->juicio=$juicio;
+	$this->etapa=$etapa;
+	$this->cliente=$cliente;
+	$this->licenciado=$licenciado;
+	}
+	public function actualiza()
+	{
+	$conexionSacadatos = new Conexion();
+    $linkSacadatos = $conexionSacadatos->con();			
+	$consulta = "UPDATE expediente SET expediente='$this->expediente', id_juzgado='$this->juzgado', id_juicio='$this->juicio', id_etapa='$this->etapa', id_cliente='$this->cliente', id_licenciado='$this->licenciado' WHERE  id_expediente=$this->id ";
+			if ($linkSacadatos->query($consulta)){
+				header("Location: expediente.php");
+											}
+			else{
+				header("Location: login.php");
+				}
+	}
+	public function inserta()
+	{
+		$conexionSacadatos = new Conexion();
+   		$linkSacadatos = $conexionSacadatos->con();
+			$consulta = "INSERT into expediente values('', '$this->expediente', '$this->juzgado','$this->juicio','$this->etapa','$this->cliente', '$this->licenciado') ";
+			if ($linkSacadatos->query($consulta)){
+				header("Location: expediente.php");
+											}
+			else{
+				header("Location: login.php");
+				}
+	}
+	public function borra()
+	{
+		$conexionSacadatos = new Conexion();
+   		$linkSacadatos = $conexionSacadatos->con();
+			$consulta = "DELETE from expediente WHERE id_expediente=$this->id";
+			if ($linkSacadatos->query($consulta)){
+				header("Location: expediente.php");
+											}
+			else{
+				header("Location: login.php");
+				}
+	}
+}
+/*
 $expediente=$_POST["expediente"];
 $juzgado=$_POST["juzgado"];
 $juicio=$_POST["juicio"];
@@ -33,5 +96,5 @@ elseif (isset($_POST["ids"])){
 			else{
 				header("Location: login.php");
 				}
-}else{  header("Location: expediente.php"); }
+}else{  header("Location: expediente.php"); }*/
 ?>

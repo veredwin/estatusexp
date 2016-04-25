@@ -8,8 +8,8 @@
 					<th>Apellido Paterno</th>
 					<th>Apellido Materno</th>
 					<th>RFC</th>
-					<th>Email</th>
 					<th>Telefono</th>
+					<th>Email</th>
 					<th>Estado</th>
 					<th>Ciudad</th>
 					<th>Colonia</th>
@@ -38,7 +38,7 @@ if ($i%2==0){
 echo "<tr class=".$stile.">";
 echo "<td>".$fila[0]."</td><td>".$fila[1]."</td><td>".$fila[2]."</td><td>".$fila[3]."</td><td>".$fila[4]."</td><td>".$fila[5]."</td><td>".$fila[6]."</td><td>".$fila[7]."</td><td>".$fila[8]."</td><td>".$fila[9]."</td><td>".$fila[10]."</td><td>".$fila[11]."</td><td>".$fila[12]."</td>
 <td><center>
-<a href=camclien.php?id_us=".$fila[0]."><p>Editar</p></a><a href=actualizaexp.php?borrar=".$fila[0]."><p>Borrar</p></a>
+<a href=camclien.php?id_us=".$fila[0]."><p>Editar</p></a><a href=camclien.php?borrar=".$fila[0]."><p>Borrar</p></a>
 </center></td>";
 echo "</tr>";
        

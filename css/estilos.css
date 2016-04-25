@@ -1,60 +1,60 @@
 
 .footer{
 	padding: 15px;
-background-color: blue;
-text-align: center;
-color: yellow;
-position: fixed;
-right: 0;
-bottom: 0;
-left: 0;
+  background-color: blue;
+  text-align: center;
+  color: yellow;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
 }
 
 #fondoinicio{
-font-family: Arial;
-background-color: #A9F5F2;
-width: 100%;
-text-align: center;
-margin: 20px,0px,20px,0px;
+  font-family: Arial;
+  background-color: #A9F5F2;
+  width: 100%;
+  text-align: center;
+  margin: 20px,0px,20px,0px;
 }
 
 .caja{
-background: #F7BE81;
-width: 300px;
-border-radius: 15px;
-margin: 0 auto 0 auto;
-padding: 0px 0px 70px 0px;
-border: black 3px solid;
+  background: #F7BE81;
+  width: 300px;
+  border-radius: 15px;
+  margin: 0 auto 0 auto;
+  padding: 0px 0px 70px 0px;
+  border: black 3px solid;
 
 }
 
 .inp{
-background: #ecf0f1;
-    border: #ccc 1px solid;
-    border-bottom: #ccc 2px solid;
-    padding: 8px;
-    width: 250px;
-    color: black;
-    margin-top: 15px;
-    font-size: 18px;
-    border-radius: 4px;
+  background: #ecf0f1;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width: 250px;
+  color: black;
+  margin-top: 15px;
+  font-size: 18px;
+  border-radius: 4px;
 }
 
 .texto{
-height:900px;
-width: 500px;
-background-color: black;
+  height:900px;
+  width: 500px;
+  background-color: black;
 
 }
 
 
 #container {
-position:static;
-top:0;
-left:0;
-width:100%;
-height:header-<length>;
+  position:static;
+  top:0;
+  left:0;
+  width:100%;
+  height:header-<length>;
 
 }
 
@@ -70,14 +70,14 @@ nav {
 nav ul {
 	padding: 0;
   margin: 0;
-	list-style: none;
-	position: relative;
-	}
-	
+  list-style: none;
+  position: relative;
+}
+
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
-	}
+}
 
 nav a {
 	display:block;
@@ -98,12 +98,12 @@ nav ul ul {
 	position: absolute; 
 	top: 60px; /* the height of the main nav */
 }
-	
+
 /* Display Dropdowns on Hover */
 nav ul li:hover > ul {
 	display:inherit;
 }
-	
+
 /* Fisrt Tier Dropdown */
 nav ul ul li {
 	width:170px;
@@ -119,7 +119,7 @@ nav ul ul ul li {
 	left:170px;
 }
 
-	
+
 /* Change this in order to change the Dropdown symbol */
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
@@ -185,22 +185,22 @@ li > a:only-child:after { content: ''; }
 }
 
 table {
-    width: 60%;
+  width: 60%;
 }
 
 th {
-    height: 50px;
-    text-align: center;
+  height: 50px;
+  text-align: center;
 }
 
 .ad{
 
-background: #ecf0f1;
-    border: #ccc 1px solid;
-    border-bottom: #ccc 2px solid;
+  background: #ecf0f1;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
   margin: auto;
-    width: 400px;
-    color: black;
-    font-size: 18px;
-    border-radius: 4px;
+  width: 400px;
+  color: black;
+  font-size: 18px;
+  border-radius: 4px;
 }
