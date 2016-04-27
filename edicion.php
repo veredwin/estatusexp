@@ -54,6 +54,8 @@ $insertando->borra();
 		        <label>Apellido Materno <input type="text" name="apellidomaterno" value="<?php echo  $materno?>" require=""></label>
 		        <label>Usuario<input type="text" name="usuario" value="<?php echo  $usuario?>" require=""></label>
 		        <label>Contraseña <input type="password" name="contrasena" value="<?php echo $contrasena ?>" required=""></label>
+		        
+
 		        <label>Tipo <select require="" name="tipo"><?php if($tipo==administrador){ $a="selected"; $b="";$c=""; $d="";} 
 		        	elseif($tipo==cliente)  {$a=""; $b="selected"; $c=""; $d="";} elseif($tipo==licenciado)  {$a=""; $b="";$c="selected"; $d="";} else {$a=""; $b=""; $c=""; $d="selected"; }  ?>
 						<option <?php echo $d; ?>>Elige una Opcion</option>
@@ -62,6 +64,8 @@ $insertando->borra();
 						<option value="licenciado" <?php echo $c; ?>>Licenciado</option>
 						</select>
 		        </label>
+
+		        
 		        <input type="hidden" name="id<?php echo $s;?>" value="<?php echo  $id;?>">
 		       
 		    </div>

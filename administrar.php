@@ -1,3 +1,50 @@
+<?php
+if (isset($_POST['nombre']) || isset($_POST['tipo'])){
+
+	$revisar=$_POST["nombre"];
+
+	if ($revisar!==""){
+$nom="and usuario.nombre LIKE '%".$_POST["nombre"]."%'";
+
+	}else{
+$nom=$_POST["nombre"];
+
+	}
+	
+$nombre=$_POST["nombre"];
+	$tipo=$_POST["tipo"];
+	
+}else{
+	$nombre="";
+	$nom="";
+	$tipo="";
+}
+
+
+?>
+<!-- formulario de busquedas -->
+		<div class="form-style-10">
+			<form method="post" action="#">
+
+				<div class="ad">
+					<label>Nombre<input type="text" name="nombre" value="<?php  echo $nombre ?>" require=""></label>
+					
+					 <label>Tipo <select require="" name="tipo">
+						<option value="">Elige una Opcion</option>
+						<option value="and usuario.tipo=&quot;administrador&quot;" >Administrador</option>
+						<option value="and usuario.tipo=&quot;cliente&quot;" >Cliente</option>
+						<option value="and usuario.tipo=&quot;licenciado&quot;" >Licenciado</option>
+						</select>
+		        </label>
+				
+		
+
+	</div>
+	<center><button value="1" name="env" class="button"><span>Actualizar</span></button></center>
+
+</form>
+</div>
+
 <div>
 		
 			<center>
@@ -11,32 +58,10 @@
 					</tr>		
 
 			<?php
-include('config.php');
-$conexionSacadatos = new Conexion();
- $linkSacadatos = $conexionSacadatos->con();
- 
-$consulta = "SELECT * FROM usuario";
-$resultado = $linkSacadatos->query($consulta);
+include_once('tablaadmin.php');
+$tablas = new Tablas($nom,$tipo);
+$tabla = $tablas->usuarios();
 
-$i=0;
-    while ($fila = $resultado->fetch_row()) {
-if ($i%2==0){
-  //  echo "el $numero es par";
-    $stile="row1";
-}else{
-   // echo "el $numero es impar";
-     $stile="row2";
-}
-echo "<tr class=".$stile.">";
-echo "<td>".$fila[0]."</td><td>".$fila[4]."</td><td>".$fila[1]."</td><td>".$fila[6]."</td>
-<td><center>
-<a href=editar.php?id_us=".$fila[0]."><p>Editar</p></a><a href=editar.php?borrar=".$fila[0]."><p>Borrar</p></a>
-</center></td>";
-echo "</tr>";
-       
- $i++;
-}
-echo "</table>";
 			?>
 
 

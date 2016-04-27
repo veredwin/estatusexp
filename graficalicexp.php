@@ -48,5 +48,5 @@ echo "\n];";
             });
         </script>
  
-        <div id="chartdiv" style="width: 700px; height: 500px;"></div>
+       <center> <div id="chartdiv" style="width: 700px; height: 500px;"></div></center>
  

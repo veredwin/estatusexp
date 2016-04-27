@@ -3,6 +3,13 @@ include_once('config.php');
 $conexionSacadatos = new Conexion();
 $mysqli = $conexionSacadatos->con();
 
+include_once('enviarasesoria.php');
+if(isset($_POST["expediente"])){
+	$insertando=new  NuevoRegistro($_POST["expediente"],$_POST["etapa"],$_POST["descripcion"]);
+	$insertando->inserta();
+}
+
+
 $consulta =" SELECT  	id_expediente, expediente  FROM  expediente";
 $resultadoexp = $mysqli->query($consulta);
 
