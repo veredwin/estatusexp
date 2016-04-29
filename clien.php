@@ -1,4 +1,21 @@
 	<?php
+
+	if (isset($_GET['rfc'])){
+
+$rfc="and cliente.rfc=\"".$_GET["rfc"]."\"";
+	$nom="";
+$pat="";
+$mat="";
+$est="";
+$ciu="";
+$cod="";
+	$nombre="";
+	$apellidopaterno="";
+	$apellidomaterno="";
+	$estado="";
+	$ciudad="";
+	$codpostal="";
+}else{ 
 	if (isset($_POST['nombre']) || isset($_POST['apellidopaterno']) || isset($_POST['apellidomaterno']) || isset($_POST['estado'])|| isset($_POST['ciudad']) || isset($_POST['codpostal'])){
 		
 		$revisar1=$_POST["nombre"];
@@ -40,7 +57,7 @@ $apellidomaterno=$_POST["apellidomaterno"];
 $estado=$_POST["estado"];
 $ciudad=$_POST["ciudad"];
 $codpostal=$_POST["codpostal"];
-
+$rfc="";
 
 }else{
 
@@ -56,8 +73,8 @@ $cod="";
 	$estado="";
 	$ciudad="";
 	$codpostal="";
-
-}
+$rfc="";
+}}
 
 ?>
 <div class="form-style-10">
@@ -75,7 +92,7 @@ $cod="";
 		        <input type="hidden" name="id<?php echo $s;?>" value="<?php echo  $id;?>">
 		       
 		    </div>
-<center><button value="1" name="env" class="button"><span>Actualizar</span></button></center>
+<center><button value="1" name="env" class="button"><span>Actualizar</span></button></button><a href="cliente.php"><input type="button" value="Mostrar Todos" name="submit" /></a></center>
 			
 		</form>
 					</div>
@@ -89,7 +106,7 @@ $cod="";
 
 
 
-		<table class="responstable">;
+		<table class="responstable">
 			<thead>	<tr>
 				<th>Id</th>
 				<th>Cliente</th>
@@ -109,7 +126,7 @@ $cod="";
 
 			<?php
 	include_once('tablaclien.php');
-$tablas = new Tablas($nom,$pat,$mat,$est,$ciu,$cod);
+$tablas = new Tablas($nom,$pat,$mat,$est,$ciu,$cod,$rfc);
 $tabla = $tablas->clientes();
 			?>
 

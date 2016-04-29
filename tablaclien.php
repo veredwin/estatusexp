@@ -8,8 +8,9 @@ class  Tablas{
 	public $est;
 	public $ciu;
 	public $cod;
+	public $rfc;
 
-	function __construct($nom,$pat,$mat,$est,$ciu,$cod)
+	function __construct($nom,$pat,$mat,$est,$ciu,$cod,$rfc)
 	{
 		$this->nom=$nom;
 		$this->pat=$pat;
@@ -17,7 +18,7 @@ class  Tablas{
 		$this->est=$est;
 		$this->ciu=$ciu;
 		$this->cod=$cod;
-
+$this->rfc=$rfc;
 
 	}
 
@@ -31,7 +32,7 @@ class  Tablas{
 			direccion.codpostal, direccion.calle, direccion.numero FROM usuario, cliente, direccion, usuariocliente 
 			where usuariocliente.id_usuario=usuario.id_usuario and usuariocliente.id_cliente=cliente.id_cliente and 
 			cliente.id_cliente=direccion.id_cliente $this->nom  $this->pat
-			 $this->mat  $this->est $this->ciu $this->cod";
+			 $this->mat  $this->est $this->ciu $this->cod $this->rfc";
 
 
 	//	echo $consulta;

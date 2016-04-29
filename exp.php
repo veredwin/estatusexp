@@ -3,6 +3,17 @@ include_once('config.php');
 $conexionSacadatos = new Conexion();
 $mysqli = $conexionSacadatos->con();
 
+if (isset($_GET['id_lic'])){
+
+$lic="and expediente.id_licenciado=\"".$_GET["id_lic"]."\"";
+	$expediente="";
+	$exp="";
+	$juzgado="";
+	$juicio="";
+	$etapa="";
+}else{
+
+
 if (isset($_POST['expediente']) || isset($_POST['juzgado']) || isset($_POST['juicio']) || isset($_POST['etapa'])){
 
 	$revisar=$_POST["expediente"];
@@ -20,13 +31,15 @@ $exp=$_POST["expediente"];
 	$juicio=$_POST["juicio"];
 	$etapa=$_POST["etapa"];
 	$expediente=$_POST["expediente"];
+	$lic="";
 }else{
 	$expediente="";
 	$exp="";
 	$juzgado="";
 	$juicio="";
 	$etapa="";
-}
+	$lic="";
+}}
 
 
 $consulta =" SELECT  	id_juzgado, juzgado  FROM  juzgado";
@@ -82,7 +95,7 @@ $resultadoeta = $mysqli->query($consulta);
 		
 
 	</div>
-	<center><button value="1" name="env" class="button"><span>Actualizar</span></button></center>
+	<center><button value="1" name="env" class="button"><span>Actualizar</span></button><a href="expediente.php"><input type="button" value="Mostrar Todos" name="submit" /></a></center>
 
 </form>
 </div>
@@ -105,7 +118,7 @@ $resultadoeta = $mysqli->query($consulta);
 
 <?php
 include_once('tablaexp.php');
-$tablas = new Tablas($exp,$juzgado,$juicio,$etapa);
+$tablas = new Tablas($exp,$juzgado,$juicio,$etapa,$lic);
 $tabla = $tablas->expedientes();
 ?>
 </div>

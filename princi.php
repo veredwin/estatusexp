@@ -28,7 +28,6 @@ $resultadoeta = $mysqli->query($consulta);
 
 			<label> Expediente<select require="" name="expediente">
 				<option  value=""  >Selecciona </option>
-				<option  value=""  >Selecciosaana </option>
 				<?PHP
 				while ($fila = $resultadoexp->fetch_row()){
 

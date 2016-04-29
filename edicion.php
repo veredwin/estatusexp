@@ -6,6 +6,8 @@ $mysqli = $conexionSacadatos->con();
 
 if (isset($_GET['id_us'])){
 	$id=$_GET['id_us'];
+
+if ($id>0) {
 $consulta = "SELECT * FROM usuario where id_usuario=$id";
 $resultado = $mysqli->query($consulta);
 $fila = $resultado->fetch_row();
@@ -17,7 +19,7 @@ $materno=$fila[3];
 $usuario=$fila[4];
 $contrasena=$fila[5];
 $tipo=$fila[6];
-}else{
+} else{
 $s="s";
 $id="";
 $nombre="";
@@ -27,7 +29,7 @@ $usuario="";
 $contrasena="";
 $tipo="";
 
-}
+}}
 
 include_once('actualiza.php');
 if(isset($_POST["id"])){
@@ -46,7 +48,7 @@ $insertando->borra();
 ?>
 <div class="form-style-10">
 		<h1>Modificar datos</h1>
-		<form method="post" action="#">
+		<form method="post" action="edicion.php">
 			
 			<div class="ad">
 		        <label>Nombre<input type="text" name="nombre" value="<?php echo $nombre?>" require=""></label>

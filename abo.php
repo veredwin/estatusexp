@@ -1,7 +1,7 @@
 <div>
 		
 			<center>
-			<table class="responstable">;
+			<table class="responstable">
 <thead>	<tr>
 					<th>Id</th>
 					<th>Nombre</th>
@@ -30,7 +30,8 @@ if ($i%2==0){
 echo "<tr class=".$stile.">";
 echo "<td>".$fila[0]."</td><td>".$fila[1]."</td><td>".$fila[2]."</td><td>".$fila[3]."</td>
 <td><center>
-<a href=abogados.php?id_us=".$fila[0]."><p>Expedientes</p></a>
+
+<a href=expediente.php?id_lic=".$fila[0]."><p>Expedientes</p></a>
 </center></td>";
 echo "</tr>";
        
