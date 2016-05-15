@@ -1,4 +1,13 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de perfil manda llamar la informacion del usuario y la refleja en un formulario.
+*
+*/
+
 // CREANDO MI CONEXION
 include_once('config.php');
 $conexionSacadatos = new Conexion();

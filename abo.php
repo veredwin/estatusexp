@@ -1,3 +1,14 @@
+<?php
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de licenciados, donde manda llamar todos los usuarios licenciados.
+*
+*/
+
+?>
+
 <div><center>
 	   <div class="main-wrapper" style="margin-top:10px">
                      <a href="graficalic.php">

@@ -1,4 +1,15 @@
-    <body >
+<?php
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de encabezado.
+*
+*Se incia el body y se agrega el menu. Se revisa el tipo de sesion para dar acceso a solo lo otorgado.
+*/
+?>
+
+<body >
 
   <nav id="menu">
     <center>

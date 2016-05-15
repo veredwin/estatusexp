@@ -1,6 +1,15 @@
 
 
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de usuarios. Manda llamar la informacion de la tabla "tablaadmin.php"
+*
+*/
+
 if (isset($_POST['nombre']) || isset($_POST['tipo'])){
 
     $revisar=$_POST["nombre"];

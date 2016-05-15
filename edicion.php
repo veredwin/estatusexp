@@ -1,4 +1,13 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de editar usuarios. Formulario donde se carga la informacion y la reenvia a actualiza.php
+*
+*/
+
 // CREANDO MI CONEXION
 include_once('config.php');
 $conexionSacadatos = new Conexion();

@@ -1,3 +1,17 @@
+<?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de login, este carga estilos diferentes.
+*
+* Se muestra un formulario para introducir usuario y contraseña
+*
+*/
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

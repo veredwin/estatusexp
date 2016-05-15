@@ -1,5 +1,13 @@
 <?php
 
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de conexion de la base de datos con todo el sistema.
+*
+*/
+
 class Conexion
 {
 

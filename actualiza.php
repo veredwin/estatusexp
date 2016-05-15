@@ -1,5 +1,11 @@
  	<?php
-// CREANDO MI CONEXION
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de actualizar, insertar y borrar usuarios.
+*
+*/
 
 include_once('config.php');
 class NuevoRegistro 

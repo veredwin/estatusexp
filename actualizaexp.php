@@ -1,4 +1,13 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de actualizar, insertar y borrar expedientes.
+*
+*/
+
 // CREANDO MI CONEXION
 include_once('config.php');
 

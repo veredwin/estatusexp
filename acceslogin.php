@@ -1,4 +1,14 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de login, recibe el usuario y contraseña, y hace una conexion en la base de datos, y consulta si existe.
+* Inicia una sesion de tipo y de usuario, y redirige a bienvenido, en caso de no existir usuario y/o contraseña redirige a login.
+*
+*/
+
 include_once('config.php');
 class Validacion{
 	public $usuario;

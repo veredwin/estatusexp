@@ -1,4 +1,15 @@
+<?php
 
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de grafica de expedientes. En esta se hace una consulta de cuantos expedientes lleva cada abogado.
+*
+*/
+
+
+?>
         <link rel="stylesheet" href="graficas/samples/style.css" type="text/css">
         <script src="graficas/amcharts/amcharts.js" type="text/javascript"></script>
         <script src="graficas/amcharts/funnel.js" type="text/javascript"></script>

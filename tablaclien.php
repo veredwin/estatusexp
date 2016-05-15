@@ -1,4 +1,16 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de tabla de clientes, carga los clientes con una consulta en la base de datos. Los clientes se reflejan en una tabla.
+*
+*Aqui se ponen restricciones por tipo de usuario.
+*
+*/
+
+
 include_once('config.php');
 
 class  Tablas{

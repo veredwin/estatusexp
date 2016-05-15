@@ -1,4 +1,13 @@
  	<?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de insertar asesorias. Ya que la inserta redirige a asistencias.php
+*
+*/
+
 // CREANDO MI CONEXION
 
 include_once('config.php');

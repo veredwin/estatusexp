@@ -1,5 +1,14 @@
 <?php
 
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de conexion donde recibe usuario y contraseña de login y la reenvia a acceslogin.php
+*
+*/
+
+
 include('config.php');
 
 

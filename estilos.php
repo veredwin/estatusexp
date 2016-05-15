@@ -1,3 +1,17 @@
+<?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de estilos. Se inicia el archivo html y su head, en este se cargan los archivos css y javascript.
+*
+* Se revisa el tipo de usuario para cargar diferentes estilos.
+*
+*/
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

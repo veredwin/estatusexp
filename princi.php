@@ -1,4 +1,13 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de principal es para agregar una asesoria.
+*
+*/
+
 include_once('config.php');
 $conexionSacadatos = new Conexion();
 $mysqli = $conexionSacadatos->con();

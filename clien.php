@@ -1,5 +1,13 @@
 	<?php
 
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de clientes manda llamar la informacion de la tabla a tablaclien.php.
+*
+*/
+
 	if (isset($_GET['rfc'])){
 
 $rfc="and cliente.rfc=\"".$_GET["rfc"]."\"";

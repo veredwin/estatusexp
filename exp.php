@@ -1,4 +1,13 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de expedientes manda llamar la informacion de la tabla a tablaexp.php.
+*
+*/
+
 include_once('config.php');
 $conexionSacadatos = new Conexion();
 $mysqli = $conexionSacadatos->con();

@@ -1,4 +1,16 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de tabla de expedientes, carga los expedientes con una consulta en la base de datos. Los expedientes se reflejan en una tabla.
+*
+*Aqui se ponen restricciones por tipo de usuario.
+*
+*/
+
+
 include_once('config.php');
 
 class  Tablas{

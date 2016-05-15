@@ -1,4 +1,11 @@
 <?php
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de asesorias manda llamar la informacion de la tabla a tablaasis.php.
+*
+*/
 $exp="";
 
  $tipo=$_SESSION["tipo"];

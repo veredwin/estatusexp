@@ -1,4 +1,12 @@
 <?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de editar clientes. Formulario donde se carga la informacion y la reenvia a actualizaclien.php
+*
+*/
 // CREANDO MI CONEXION
 include_once('config.php');
 $conexionSacadatos = new Conexion();

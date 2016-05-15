@@ -1,3 +1,15 @@
+<?php
+
+/**
+* @author Edwin Humberto Vergara Beltrán
+* @version 1.0
+* 
+* Modulo de grafica de asesorias. En esta se hace una consulta de cuantas asesorias por fecha y esta se refleja.
+*
+*/
+
+?>
+
 
         <link rel="stylesheet" href="graficas/samples/style.css" type="text/css">
         <script src="graficas/amcharts/amcharts.js" type="text/javascript"></script>
