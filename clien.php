@@ -77,22 +77,43 @@ $rfc="";
 }}
 
 ?>
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">Close</button>
+                   
+                </div>
+                <div class="ct">
+              
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- fin del modal -->
+
 <div class="form-style-10">
-		<h1>Modificar datos</h1>
-		<form method="post" action="#">
+		<form class="formulario" method="post" action="#">
 			
 			<div class="ad">
 		        <label>Nombre<input type="text" name="nombre" value="<?php echo $nombre?>" require=""></label>
-		        <label>Apellido Paterno <input type="text" name="apellidopaterno" value="<?php echo  $apellidopaterno?>" require=""></label>
-		        <label>Apellido Materno <input type="text" name="apellidomaterno" value="<?php echo  $apellidomaterno?>" require=""></label>
+		        <label>A. Paterno <input type="text" name="apellidopaterno" value="<?php echo  $apellidopaterno?>" require=""></label>
+            <br>
+		        <label>A. Materno <input type="text" name="apellidomaterno" value="<?php echo  $apellidomaterno?>" require=""></label>
 		             <label>Estado<input type="text" name="estado" value="<?php echo  $estado?>" require=""></label>
+                <br>
 		              <label>Ciudad<input type="text" name="ciudad" value="<?php echo  $ciudad?>" require=""></label>
 		             
 		                  <label>Codigo Postal<input type="text" name="codpostal" value="<?php echo  $codpostal?>" require=""></label>
+                <br>
 		        <input type="hidden" name="id<?php echo $s;?>" value="<?php echo  $id;?>">
 		       
 		    </div>
-<center><button value="1" name="env" class="button"><span>Actualizar</span></button></button><a href="cliente.php"><input type="button" value="Mostrar Todos" name="submit" /></a></center>
+<center><button value="1" name="env" class="button"><span>Buscar</span></button><a href="cliente.php"><input type="button" value="Mostrar Todos" name="submit" class="botonrojo"/></a></center>
 			
 		</form>
 					</div>
@@ -106,7 +127,7 @@ $rfc="";
 
 
 
-		<table class="responstable">
+		<table>
 			<thead>	<tr>
 				<th>Id</th>
 				<th>Cliente</th>
@@ -121,8 +142,10 @@ $rfc="";
 				<th>Codigo Postal</th>
 				<th>Calle</th>
 				<th>Numero</th>
-				<th>Opciones</th>
-			</tr>		
+				<th>Modificar</th>
+                	<th>Eliminar</th>
+			</tr>		</thead>
+					<tbody>	
 
 			<?php
 	include_once('tablaclien.php');
@@ -131,6 +154,42 @@ $tabla = $tablas->clientes();
 			?>
 
 
-			<a href="camclien.php"><button type="submit" class="inp" style=" margin-bottom: 50%;"><span>Agregar</span></button></a>
+			
+   <div class="main-wrapper">
+                    <a data-toggle="modal" data-target="#exampleModal" data-whatever="0">
+                        <i class="material-icons"  style="font-size: 4rem">add</i>
+                    </a>
+                </div>
+				
 
 		</div>
+
+		<!-- jQuery Version 1.11.0 -->
+     <script src="js/jquery-latest.min.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id_us=' + recipient;
+            $.ajax({
+                type: "GET",
+                url: "ediclien.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });  
+    })
+    </script>
+        

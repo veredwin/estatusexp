@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+require("comprobarsesion.php");
 if($_SESSION["tipo"]=="administrador")
 {
 include("estilos.php");
@@ -14,7 +15,7 @@ include("clien.php");
 include("pie.php");
 } else {
 	
-require("comprobarsesion.php");
+
 }
 
 ?>

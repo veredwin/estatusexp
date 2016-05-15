@@ -17,11 +17,12 @@ class NuevoRegistro
 	public $codpostal;
 	public $calle;
 	public $numero;
-	
+	public $usuario;
+	public $contrasena;
 
 
 	
-	function __construct($id, $nombre, $apellidopaterno, $apellidomaterno, $rfc, $telefono, $email, $estado, $ciudad, $colonia, $codpostal, $calle, $numero)
+	function __construct($id, $nombre, $apellidopaterno, $apellidomaterno, $rfc, $telefono, $email, $estado, $ciudad, $colonia, $codpostal, $calle, $numero, $usuario, $contrasena)
 	{
 
 		$this->id=$id;
@@ -37,14 +38,32 @@ class NuevoRegistro
 		$this->codpostal=$codpostal;
 		$this->calle= $calle;
 		$this->numero= $numero;
+		$this->usuario= $usuario;
+		$this->contrasena= $contrasena;
 	}
 	public function actualiza()
 	{
 		$conexionSacadatos = new Conexion();
-		$linkSacadatos = $conexionSacadatos->con();			
-		$consulta = "UPDATE usuario, cliente, direccion, usuariocliente SET nombre='$this->nombre', apellidopaterno='$this->apellidopaterno', apellidomaterno='$this->apellidomaterno', rfc='$this->rfc', telefono='$this->telefono', email='$this->email', estado='$this->estado', ciudad='$this->ciudad', colonia='$this->colonia', codpostal='$this->codpostal', calle='$this->calle', numero='$this->numero'  where usuariocliente.id_usuario=usuario.id_usuario and usuariocliente.id_cliente=cliente.id_cliente and cliente.id_cliente=direccion.id_cliente and cliente.id_cliente=$this->id ";
+		$linkSacadatos = $conexionSacadatos->con();	
+		$linkSacadatos->set_charset("utf8");		
+		$consulta = "UPDATE usuario, cliente, direccion, usuariocliente SET nombre='$this->nombre', apellidopaterno='$this->apellidopaterno', apellidomaterno='$this->apellidomaterno', rfc='$this->rfc', telefono='$this->telefono', email='$this->email', estado='$this->estado', ciudad='$this->ciudad', colonia='$this->colonia', codpostal='$this->codpostal', calle='$this->calle', numero='$this->numero', usuario='$this->usuario', contrasena='$this->contrasena'  where usuariocliente.id_usuario=usuario.id_usuario and usuariocliente.id_cliente=cliente.id_cliente and cliente.id_cliente=direccion.id_cliente and cliente.id_cliente=$this->id ";
 		if ($linkSacadatos->query($consulta)){
-			header("Location: cliente.php");
+			$tipo=$_SESSION["tipo"];
+					if ($tipo=="cliente") {
+echo "<script>
+alert('Actualizacion Guardada');
+window.location.href='perfilcliente.php';
+</script>";
+}	else{
+			
+                      if ($tipo!="cliente") {
+                          
+                           header("Location: cliente.php");
+                      }else{
+                        header("Location: cliente.php");  
+                          
+                      }
+                       }
 		}
 		else{
 			header("Location: login.php");
@@ -54,19 +73,21 @@ class NuevoRegistro
 	{
 		$conexionSacadatos = new Conexion();
 		$linkSacadatos = $conexionSacadatos->con();
-		$consulta = "INSERT INTO usuario (`id_usuario`, `nombre`, `apellidopaterno`, `apellidomaterno`, `usuario`, `contrasena`, `tipo`) VALUES (NULL, '$this->nombre', '$this->apellidopaterno', '$this->apellidomaterno', '$this->nombre', '1234', 'cliente');";
+		$linkSacadatos->set_charset("utf8");	
+		$consulta = "INSERT INTO usuario (`id_usuario`, `nombre`, `apellidopaterno`, `apellidomaterno`, `usuario`, `contrasena`, `tipo`) VALUES (NULL, '$this->nombre', '$this->apellidopaterno', '$this->apellidomaterno', '$this->usuario', '$this->contrasena', '$this->tipo');";
 		if ($linkSacadatos->query($consulta)){
 			$consulta = "INSERT INTO cliente (`id_cliente`, `rfc`, `telefono`, `email`) VALUES (NULL, '$this->rfc', '$this->telefono', '$this->email');";
 			if ($linkSacadatos->query($consulta)){
 
-				$linkSacadatos1 = $conexionSacadatos->con();
-
+				$linkSacadatos1 = $conexionSacadatos->con();	
 				$consulta1 = "select id_cliente FROM cliente where rfc='$this->rfc'";
+				//echo $consulta;1;
 				$resultado1 = $linkSacadatos1->query($consulta1);
 				$fila1 = $resultado1->fetch_row();
 				$id_clientes=$fila1[0];
 
-				$consulta = "INSERT INTO direccion (`id_direccion`, `estado`, `ciudad`, `colonia`, `codpostal`, `calle`, `numero`, `id_cliente`) VALUES (NULL, '$this->estado', '$this->ciudad', '$this->colonia', '$this->codpostal', '$this->calle', $this->numero, $id_clientes)";
+				$consulta = "INSERT INTO direccion (`id_direccion`, `estado`, `ciudad`, `colonia`, `codpostal`, `calle`, `numero`, `id_cliente`) VALUES (NULL, '$this->estado', '$this->ciudad', '$this->colonia', '$this->codpostal', '$this->calle', '$this->numero', $id_clientes)";
+				//echo $consulta;
 				if ($linkSacadatos->query($consulta)){
 
 					$consulta2 = "select id_usuario FROM usuario where nombre='$this->nombre' and apellidopaterno='$this->apellidopaterno' and apellidomaterno='$this->apellidomaterno'";
@@ -76,8 +97,9 @@ class NuevoRegistro
 
 					$consulta = "INSERT INTO usuariocliente (`id_usuariocliente`, `id_usuario`, `id_cliente`) VALUES (NULL, '$id_usuarios', '$id_clientes');";
 					if ($linkSacadatos->query($consulta)){
-
+ 				
 						header("Location: cliente.php");
+					
 					}
 					else{
 						header("Location: login.php");
@@ -99,22 +121,26 @@ class NuevoRegistro
 	{
 		$conexionSacadatos = new Conexion();
 		$linkSacadatos = $conexionSacadatos->con();
+		$linkSacadatos->set_charset("utf8");	
 		$consulta = "select id_usuario FROM usuariocliente where id_cliente=$this->id";
 		$resultado = $linkSacadatos->query($consulta);
-		$fila = $resultado->fetch_row();
+		
+echo $consulta;
 
+		while ($fila = $resultado->fetch_row()){
 
-		while ($fila = $resultadojuz->fetch_row()){
+echo		$id_usuarios=$fila[0];
 
-		$id_usuarios=$fila[0];
-
-		$consulta = "delete FROM usuario where id_usuario=$id_usuarios";
 		
 		}
+        $consulta = "delete FROM usuario where id_usuario=$id_usuarios";
+		echo $consulta;
 		if ($linkSacadatos->query($consulta)){
 		$consulta = "delete from cliente where id_cliente=$this->id";
 		if ($linkSacadatos->query($consulta)){
-		header("Location: cliente.php");
+echo $consulta;		
+            
+       header("Location: cliente.php");
 	}
 	else{
 	header("Location: login.php");

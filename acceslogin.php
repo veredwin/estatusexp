@@ -27,11 +27,10 @@ if($rowcount==0){
 header("Location: login.php");
 
 }elseif ($rowcount>=1) {
-
-
 session_start();
+$_SESSION["usuario"]=$row[0];	
 $_SESSION["tipo"]=$row[6];	
-	header("Location: principal.php");
+header("Location: bienvenido.php");
 }
   }
 }

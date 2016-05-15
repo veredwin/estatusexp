@@ -1,9 +1,8 @@
-<?php session_start();
-
+<?PHP
+require("comprobarsesion.php");
 include("estilos.php");
 include("encabezado.php");
-include("exp.php");
+include("home.php");
 include("pie.php");
-
 
 ?>

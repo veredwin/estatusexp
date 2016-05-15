@@ -56,8 +56,8 @@ class NuevoRegistro
    		$linkSacadatos = $conexionSacadatos->con();
 			$consulta = "DELETE from expediente WHERE id_expediente=$this->id";
 			if ($linkSacadatos->query($consulta)){
-				header("Location: expediente.php");
-											}
+					header("Location: expediente.php");
+										}
 			else{
 				header("Location: login.php");
 				}

@@ -30,12 +30,12 @@ class NuevoRegistro
 	$conexionSacadatos = new Conexion();
     $linkSacadatos = $conexionSacadatos->con();			
 	$consulta = "UPDATE usuario SET nombre='$this->nombre', apellidopaterno='$this->apellidopaterno', apellidomaterno='$this->apellidomaterno', usuario='$this->usuario', contrasena='$this->contrasena', tipo='$this->tipo' where id_usuario=$this->id ";
-			echo $consulta;
+			
 			if ($linkSacadatos->query($consulta)){
 				header("Location: admin.php");
 											}
 			else{
-				//header("Location: login.php");
+				header("Location: login.php");
 				}
 	}
 	public function inserta()
@@ -63,6 +63,24 @@ class NuevoRegistro
 				header("Location: login.php");
 				}
 	}
+    
+    	public function actual()
+	{
+	$conexionSacadatos = new Conexion();
+    $linkSacadatos = $conexionSacadatos->con();			
+	$consulta = "UPDATE usuario SET nombre='$this->nombre', apellidopaterno='$this->apellidopaterno', apellidomaterno='$this->apellidomaterno', usuario='$this->usuario', contrasena='$this->contrasena', tipo='$this->tipo' where id_usuario=$this->id ";
+			
+			if ($linkSacadatos->query($consulta)){
+			echo "<script>
+alert('Actualizacion Guardada');
+window.location.href='perfilcliente.php';
+</script>";
+											}
+			else{
+				header("Location: login.php");
+				}
+	}
+    
 }
 
 
